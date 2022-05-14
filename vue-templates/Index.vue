@@ -1,19 +1,12 @@
 <template>
    <div>
-       <p>{{ testFnc() }}</p>
+       <p>{{ test }}</p>
    </div>
 </template>
 <script>
     export default {
         name: "idx",
-        props: {test: {type: String}},
-        data(props) {
-            function testFnc(){
-                return "hello";
-            }
-
-           return {testFnc}
-        }
+        props: {test: {type: String}}
     }
 </script>
 <style scoped>

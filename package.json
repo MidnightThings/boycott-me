@@ -3,7 +3,6 @@
         "@hotwired/stimulus": "^3.0.0",
         "@popperjs/core": "^2.11.5",
         "@symfony/stimulus-bridge": "^3.0.0",
-        "@symfony/webpack-encore": "^1.8.2",
         "bootstrap": "^5.1.3",
         "core-js": "^3.0.0",
         "jquery": "^3.6.0",
@@ -11,14 +10,21 @@
         "vue": "^2.6.14",
         "vue-loader": "^15.9.8",
         "vue-template-compiler": "^2.6.14",
-        "webpack-notifier": "^1.6.0"
+        "webpack": "^5.72.1",
+        "webpack-cli": "^4.9.2"
     },
     "license": "UNLICENSED",
     "private": true,
+    "main": "./asstes/app.js",
     "scripts": {
-        "dev-server": "encore dev-server",
-        "dev": "encore dev",
-        "watch": "encore dev --watch",
-        "build": "encore production --progress"
+        "bundle": "webpack --config webpack.config.js --mode=production --node-env=production",
+        "bundle:dev": "webpack --config webpack.config.js --mode=development --node-env=development",
+        "watch-bundle": "webpack --config webpack.config.js --watch --progress"
+    },
+    "dependencies": {
+        "css-loader": "^6.7.1",
+        "less": "^4.1.2",
+        "less-loader": "^10.2.0",
+        "mini-css-extract-plugin": "^2.6.0"
     }
 }
