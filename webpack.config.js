@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 const webpack = require("webpack");
+const vueLoader = require('vue-loader');
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -21,12 +22,17 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
-        })
+        }),
+        new vueLoader.VueLoaderPlugin()
     ],
     resolve: {
         alias: {
             jquery: "jquery/src/jquery"
-        }
+        },
+        alias: {
+            vue$: "vue/dist/vue.esm.js"
+        },
+        extensions: ["*", ".js", ".vue", ".json"]
     },
 
     module: {
@@ -62,6 +68,15 @@ module.exports = {
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
                 type: "asset/inline",
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+                
+            },
+            {
+                test: /\.js$/,
+                loader: "babel-loader"
             }
         ]
     }

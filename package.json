@@ -22,9 +22,16 @@
         "watch-bundle": "webpack --config webpack.config.js --watch --progress"
     },
     "dependencies": {
+        "@babel/core": "^7.17.10",
+        "@babel/preset-env": "^7.17.10",
+        "babel-loader": "^8.2.5",
         "css-loader": "^6.7.1",
         "less": "^4.1.2",
         "less-loader": "^10.2.0",
-        "mini-css-extract-plugin": "^2.6.0"
-    }
+        "mini-css-extract-plugin": "^2.6.0",
+        "typescript": "^4.6.4"
+    },
+    "babel": {
+        "presets": ["@babel/preset-env"]
+      }
 }

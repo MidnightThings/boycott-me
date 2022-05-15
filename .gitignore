@@ -17,3 +17,7 @@ yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 
 /nbproject/
+composer.phar
+src/empty.js
+public/js/scripts.js
+.env
